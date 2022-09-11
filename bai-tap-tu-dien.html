@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Simple dictionary</h1>
+<input id="nhap" type="text" placeholder="Enter the word">
+<button id="dich" onclick="dichSangTv()">Translate</button>
+<p id="ketQua"></p>
+<script>
+    let arrEnglish = ["Mid-autumn festival", "Moon cake", "Lion dance", "Star-shaped lantern", "Lantern parade"]
+    // let arrEnglishVampire=["twilight","new moon","eclipse","breaking dawn"]
+    let arrVietnamese = ["Trung thu", "Bánh trung thu", "Múa lân", "Đèn ngôi sao", "Rước đèn"]
+    // let arrVietnameseVampire=["Chạng Vạng", "Trăng non", "Nhật thực", "Hừng đông"]
+    function dich() {
+        let tuCandich = document.getElementById('nhap').value;
+        console.log(tuCandich)
+        for (let i = 0; i < arrEnglish.length; i++) {
+            if (arrEnglish[i]===tuCandich) return i;
+            }
+                return -1;
+            }
+
+    function dichSangTv(){
+        let x=dich();
+        console.log(x)
+        if (x===-1){
+            document.getElementById("ketQua").innerHTML="Not found"
+        } else{
+            document.getElementById("ketQua").innerText=arrVietnamese[x];
+        }
+    }
+
+
+</script>
+</body>
+</html>

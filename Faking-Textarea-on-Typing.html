@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div style="text-align: center">
+  <h1>Faking Textarea</h1>
+  <textarea id="txt" style="width: 200px; height: 100px"></textarea>
+</div>
+<script>
+  let array=[];
+  let faking= "Hello World!"
+  array= faking.split('');
+  let str = "";
+  console.log(array)
+  function fake(){
+      let text = document.getElementById("txt").value;
+      for (let i = 0; i < text.length; i++) {
+          str=str+array[i];
+          if (i===12) {
+              str="";
+          }
+      }
+      document.getElementById("txt").value = str;
+      str="";setTimeout(fake,1);
+  }
+  fake();
+</script>
+</body>
+</html>
