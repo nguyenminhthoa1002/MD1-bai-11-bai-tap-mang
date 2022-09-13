@@ -5,6 +5,26 @@
     <title>Title</title>
 </head>
 <body>
+<script>
+    let array=[1,5,6,9,8,4,55,21,10,51];
+    function so(){
+    let x=+prompt("Enter the number");
+    for (let i = 0; i < array.length; i++) {
+        if (x === array[i])  return i;
+    }
+    return -1
+    }
 
+    function kiemTra(){
+        let x=so();
+        console.log(x)
+        if (x===-1){
+            document.write(array[x] + " is not in the array")
+        } else{
+            document.write(array[x] + " is in the array");
+        }
+    }
+    kiemTra()
+</script>
 </body>
 </html>

@@ -6,7 +6,27 @@
 </head>
 <body>
 <script>
-  let array=[1,5,6,9,8,4,55,21,10,51];
+    let array=[1,5,6,9,8,4,55,21,10,51];
+    for (let i = 0; i < array.length; i++) {
+        array.join(", ")
+    }
+    document.write("Dãy số là: ", array.join(", ") + "<br/>")
+
+    let max = array[0];
+    let index = 0;
+    let sum = 0;
+    for (let i = 0; i < array.length; i++) {
+        if (max < array[i]) {
+            max = array[i];
+            index = i;
+        }
+    } document.write("max: " + max + " at position " + index + "<br/>")
+
+    for (let i = 0; i < array.length; i++) {
+        sum += array[i]
+        console.log("sum-------------",sum)
+        trungBinh = sum/(array.length);
+    } document.write("Giá trị trung bình của các phần tử là: " + trungBinh)
 
 </script>
 </body>

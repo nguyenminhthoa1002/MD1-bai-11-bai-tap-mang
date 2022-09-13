@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Simple Dictionary</h1>
+<input id="nhap" type="text">
+<button onclick="dichSangTv()">Translate</button>
+<p id="hienThi"></p>
+<script>
+    let arrEnglish=["twilight","new moon","eclipse","breaking dawn"]
+    let arrVietnamese=["Chạng Vạng", "Trăng non", "Nhật thực", "Hừng đông"]
+    function dich() {
+        let tuCanDich = document.getElementById('nhap').value;
+        for (let i = 0; i < arrEnglish.length; i++) {
+            if (tuCanDich===arrEnglish[i]) return i;
+        } return -1
+    }
+
+    function dichSangTv(){
+        let x=dich()
+        if (x===-1) {
+            document.getElementById('hienThi').innerHTML="Not found"
+        } else {
+            document.getElementById('hienThi').innerHTML=arrVietnamese[x]
+        }
+    }
+
+// function dichSangTv(){
+//     let tuCanDich = document.getElementById('nhap').value;
+//     console.log("tuCanDich-------------------", tuCanDich)
+//     for (let i = 0; i < arrEnglish.length; i++) {
+//         console.log("với i = ------",i, "check bằng", tuCanDich==arrEnglish[i])
+//         if (tuCanDich==arrEnglish[i]) {
+//             document.getElementById('hienThi').innerHTML=arrVietnamese[i]
+//             break;
+//         } else {
+//             document.getElementById('hienThi').innerHTML="Not found"
+//         }
+//     }
+// }
+
+
+</script>
+</body>
+</html>

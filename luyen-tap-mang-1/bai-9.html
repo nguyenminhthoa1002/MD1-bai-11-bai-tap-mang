@@ -5,6 +5,14 @@
     <title>Title</title>
 </head>
 <body>
-
+<script>
+    let a=[1,5,6,9,8,4,55,21,10,51];
+    let b=[-5,-6,-8,-9,6,9,7,-10,55];
+    c=a.concat(b);
+    c.sort(function (a,b){
+        return a-b;
+    })
+    document.write(c.join(", "))
+</script>
 </body>
 </html>

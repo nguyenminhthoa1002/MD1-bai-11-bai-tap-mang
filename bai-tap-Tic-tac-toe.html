@@ -7,38 +7,52 @@
 <body>
 <h3>Caro Game Simple</h3>
 <p id="carogame"></p>
+<div id="gameContainer">
+    <h1>Tic Tac Toe</h1>
+    <div id="cellContainer">
+        <div cellIndex="0" class="cell"></div>
+        <div cellIndex="1" class="cell"></div>
+        <div cellIndex="2" class="cell"></div>
+        <div cellIndex="3" class="cell"></div>
+        <div cellIndex="4" class="cell"></div>
+        <div cellIndex="5" class="cell"></div>
+        <div cellIndex="6" class="cell"></div>
+        <div cellIndex="7" class="cell"></div>
+        <div cellIndex="8" class="cell"></div>
+    </div>
+    <h1 id="statusText"></h1>
+    <button id="restarBtn">Restart Button</button>
+</div>
+
 <script>
-    let b=document.getElementById('carogame');
-    let board =[];
-    let data = "";
-    for (let i = 0; i < 5; i++) {
-        board[i] = new Array('.','.','.','.','.',);
+    const cells = document.querySelectorAll('.cell')
+    const statusText = document.querySelector('#statusText')
+    const restartBtn = document.querySelector('#restarBtn')
+
+    const winningConditions = [
+        [0,1,2,],
+        [3,4,5,],
+        [6,7,8,],
+        [0,3,6],
+        [1,4,7,],
+        [2,5,8],
+        [0,4,8],
+        [2,4,6]
+    ]
+
+    let options = ["","","","","","","","",""]
+    let currentPlayer = 'X'
+    let running = false
+
+    khoiTaoTroChoi()
+
+    function khoiTaoTroChoi() {
+        cells.forEach(cells => cells,addEventListener('click',oBam))
+        restartBtn.addEventListener('click',chayLai)
+        statusText.textContent= 'Lượt của ${currentPlayer}';
+        running = true;
     }
 
-    for (let i = 0; i < 5; i++) {
-        data +="<br/>";
-        for (let j = 0; j < 5; j++) {
-            data += board[i][j] + "&nbsp;&nbsp;";
-        }
-    }
-
-    data += "<br/><br/><input type='button' value='Change Value' onclick='changeValue()'>"
-    b.innerHTML="<hr/>" + data;
-
-    function changeValue(){
-        let positionX = prompt("X: ");
-        let positionY = prompt("Y: ");
-        data = "";
-        board[positionX][positionY] = "x";
-        for (let i = 0; i < 5; i++) {
-            data += "<br/>";
-            for (let j = 0; j < 5; j++) {
-                data += board[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;";
-            }
-        }
-        data += "<br/><br/><input type='button' value='Change Value' onclick='changeValue()'>"
-        b.innerHTML = "<hr/>" + data;
-    }
 </script>
 </body>
 </html>

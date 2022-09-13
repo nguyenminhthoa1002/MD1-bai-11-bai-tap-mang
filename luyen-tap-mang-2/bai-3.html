@@ -5,6 +5,20 @@
     <title>Title</title>
 </head>
 <body>
+<script>
+   let mangKyTu=prompt("Nhập vào 1 mảng ký tự").trim().split("")
+   let demSoKyTu= 0;
 
+   for (let i = 0; i < mangKyTu.length; i++) {
+       if (mangKyTu[i] == ' '){
+           continue;
+       } else {
+           index=mangKyTu[i];
+           demSoKyTu++
+           console.log(`Số thứ tự ${i+1} là: ${mangKyTu[i]}`)
+       }
+   }
+   console.log(`Số ký tự trong mảng là: ${demSoKyTu}`)
+</script>
 </body>
 </html>

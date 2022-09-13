@@ -5,6 +5,17 @@
     <title>Title</title>
 </head>
 <body>
+<script>
+    let array=[-5,-6,-8,-9,6,9,7,-10,55]
+    let newArray=[];
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] < 0) {
+          newArray.push(array[i])
+        }
+    }
+    document.write("Số nguyên âm là: " + newArray + "<br/>")
+    document.write("Các số nguyên âm là: " + newArray.length)
 
+</script>
 </body>
 </html>
